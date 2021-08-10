@@ -1,0 +1,33 @@
+{
+  "configs": [
+    "global.xml",
+    "properties_files.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "com.mycompany:properties_files:1.0.0-SNAPSHOT",
+  "minMuleVersion": "4.3.0",
+  "requiredProduct": "MULE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [],
+      "exportedResources": [
+        "log4j2.xml",
+        "global.xml",
+        "config-prd.yaml",
+        "config2.properties",
+        "config1.yaml",
+        "properties_files.xml",
+        "common.yaml",
+        "config-uat.yaml",
+        "config-dev.yaml",
+        "config-test.yaml"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}
