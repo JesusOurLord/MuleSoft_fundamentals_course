@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="peoplejsonexample" format="json">
+      <types:shape format="weave" example="people.json"><![CDATA[%dw 2.0
+
+type peoplejsonexample = {|
+  people: {|
+    person1: {| name: String |}, 
+    person2: {| name: String |}, 
+    person3: {| name: String |}, 
+    person4: {| name: String |}, 
+    person5: {| name: String |}
+  |}
+|} {"example": "{\\\"people\\\":{\\\"person1\\\":{\\\"name\\\":\\\"Lily\\\"},\\\"person2\\\":{\\\"name\\\":\\\"Mordecai\\\"},\\\"person3\\\":{\\\"name\\\":\\\"Lorali\\\"},\\\"person4\\\":{\\\"name\\\":\\\"TJ\\\"},\\\"person5\\\":{\\\"name\\\":\\\"Axel\\\"}}}"}
+
+]]></types:shape>
+    </types:type>
+    <types:type name="people" format="java">
+      <types:shape format="raml"><![CDATA[#%RAML 1.0 DataType
+type: string]]></types:shape>
+    </types:type>
+    <types:type name="fieldcourse" format="json">
+      <types:shape format="weave" example="fieldscourse.json"><![CDATA[%dw 2.0
+
+type fieldcourse = {|
+  priority1: String, 
+  priority2: String, 
+  priority3: String, 
+  priority4: String
+|} {"example": "{\\\"priority1\\\":\\\"God\\\",\\\"priority2\\\":\\\"family\\\",\\\"priority3\\\":\\\"friends\\\",\\\"priority4\\\":\\\"work\\\"}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#7bde3ff5-1013-4ea0-8532-b4ab6e163bf3">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="peoplejsonexample"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#9994d6e7-ed71-4b3c-bbce-28f237ca10fb">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="fieldcourse"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>
