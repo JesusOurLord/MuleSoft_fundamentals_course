@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="fileExample" format="json">
+      <types:shape format="weave" example="examples/fileExample.json-10.txt"><![CDATA[%dw 2.0
+
+type fileExample = {|
+  file: {|
+    fileName: String, 
+    customer: {|
+      customerId: Number {"typeId": "int"}, 
+      customerName: String
+    |}
+  |}
+|} {"example": "{\\\"file\\\":{\\\"fileName\\\":\\\"file1\\\",\\\"customer\\\":{\\\"customerId\\\":5,\\\"customerName\\\":\\\"Rose\\\"}}}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#15ea7ee6-08ad-4957-9ad8-d5e8a9d5c0e7">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="fileExample"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#bbed5fe3-341c-4ad3-860a-dadef36b5840">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="fileExample"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#8527f9b1-63ea-408b-9d4c-050cf69a7e4b">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="fileExample"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

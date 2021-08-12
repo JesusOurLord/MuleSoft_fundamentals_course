@@ -1,0 +1,38 @@
+{
+  "configs": [
+    "global.xml",
+    "file_connector.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "com.mycompany:file_connector:1.0.0-SNAPSHOT",
+  "minMuleVersion": "4.3.0",
+  "requiredProduct": "MULE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [],
+      "exportedResources": [
+        "log4j2.xml",
+        "global.xml",
+        "file_connector.xml",
+        "application-types.xml",
+        "examples/fileExample.json-5.txt",
+        "examples/fileExample.json-4.txt",
+        "examples/fileExample.json-6.txt",
+        "examples/fileExample.json-7.txt",
+        "examples/fileExample.json-3.txt",
+        "examples/fileExample.json-2.txt",
+        "examples/fileExample.json-1.txt",
+        "examples/fileExample.json-10.txt",
+        "examples/fileExample.json.txt",
+        "examples/fileExample.json-9.txt",
+        "examples/fileExample.json-8.txt"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}

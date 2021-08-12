@@ -1,0 +1,8 @@
+{
+	"file": {
+		"customer": {
+			"customerId": 5,
+			"customerName": "Rose"
+		}
+	}
+}
